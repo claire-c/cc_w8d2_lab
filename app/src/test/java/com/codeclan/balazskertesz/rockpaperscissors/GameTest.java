@@ -35,4 +35,11 @@ public class GameTest {
         game.setComputer("Claire");
         assertEquals("Claire", game.getComputer());
     }
+
+    @Test
+    public void test() {
+        game.setPlayer("ROCK");
+
+        System.out.println(Logic.valueOf(game.getPlayer()).getValue());
+    }
 }

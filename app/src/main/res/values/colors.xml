@@ -3,4 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="rockButton">#80868f</color>
+    <color name="paperButton">#FFFFFF</color>
+    <color name="scissorButton">#B3ACE5</color>
+    <color name="black">#000</color>
 </resources>

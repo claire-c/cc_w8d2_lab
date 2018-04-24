@@ -13,6 +13,7 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
     Button paper;
 
     TextView display;
+    TextView score;
 
     Game game;
 
@@ -25,18 +26,29 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
         paper = findViewById(R.id.buttonPaperID);
         display = findViewById(R.id.textDisplay);
         game = new Game();
+        score = findViewById(R.id.scoreID);
+
+//        setButtonColors();
     }
 
     public void getPlayerHand(View view){
         Button button = (Button) view;
         game.setPlayer(button.getText().toString());
         game.randomComputerHand();
-        displayText();
+        displayWinnerText();
 
     }
 
-    public void displayText(){
-        display.setText("Player:"+game.getPlayer()+"Computer"+game.getComputer());
+    public void displayWinnerText(){
+        display.setText(game.handsPlayedText());
+        score.setText(game.displayScore());
+
+    }
+
+    public void setButtonColors(){
+        rock.setBackgroundColor(getResources().getColor(R.color.rockButton));
+        paper.setBackgroundColor(getResources().getColor(R.color.paperButton));
+        scissors.setBackgroundColor(getResources().getColor(R.color.scissorButton));
     }
 
 
