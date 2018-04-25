@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RockPaperScissors</string>
+    <string name="answer_activity_title">answer_activity_title</string>
+
 </resources>
