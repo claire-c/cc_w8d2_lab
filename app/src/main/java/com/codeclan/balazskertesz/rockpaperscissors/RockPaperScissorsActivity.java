@@ -28,7 +28,7 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
         game = new Game();
 
 
-//        setButtonColors();
+        setButtonColors();
     }
 
     public void getPlayerHand(View view){
@@ -38,18 +38,21 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
         game.randomComputerHand();
 
         String displayWinnerText = displayWinnerText();
+        String displayScore = displayScore();
 
         Intent intent = new Intent(this, AnswerActivity.class);
         intent.putExtra("displayWinnerText", displayWinnerText);
+        intent.putExtra("displayScore", displayScore);
         startActivity(intent);
 
     }
 
     public String displayWinnerText(){
-       instructions.setText(game.handsPlayedText());
-       return instructions.getText().toString();
-       // score.setText(game.displayScore());
+     return game.handsPlayedText();
+    }
 
+    public String displayScore(){
+        return game.displayScore();
     }
 
     public void setButtonColors(){

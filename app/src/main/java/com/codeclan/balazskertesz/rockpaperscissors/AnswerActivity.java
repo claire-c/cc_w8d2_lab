@@ -21,7 +21,12 @@ public class AnswerActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         String displayWinnerText = extras.getString("displayWinnerText");
+        String displayScore = extras.getString("displayScore");
 
         answerTextView.setText(displayWinnerText);
+        scoreTextView.setText(displayScore);
     }
+
+
+
 }
