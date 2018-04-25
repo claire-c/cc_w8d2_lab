@@ -3,6 +3,7 @@ package com.codeclan.balazskertesz.rockpaperscissors;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -26,6 +27,7 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
         paper = findViewById(R.id.buttonPaperID);
         instructions = findViewById(R.id.textDisplay);
         game = new Game();
+        Log.d(getClass().toString(), "In the Game onCreate");
 
 
         setButtonColors();
