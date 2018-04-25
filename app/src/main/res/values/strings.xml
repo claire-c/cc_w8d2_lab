@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">RockPaperScissors</string>
-    <string name="answer_activity_title">answer_activity_title</string>
+    <string name="answer_activity_title">Who wins</string>
 
 </resources>

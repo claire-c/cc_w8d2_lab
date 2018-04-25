@@ -6,4 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".AnswerActivity">
 
+    <TextView
+        android:id="@+id/answerTextViewID"
+        android:layout_width="331dp"
+        android:layout_height="161dp"
+        android:layout_marginBottom="308dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginRight="27dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="8dp"
+        android:text="Answer text goes here"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/scoreTextViewID"
+        android:layout_width="329dp"
+        android:layout_height="93dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Score goes here"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answerTextViewID" />
 </android.support.constraint.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.codeclan.balazskertesz.rockpaperscissors;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,8 +13,7 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
     Button scissors;
     Button paper;
 
-    TextView display;
-    TextView score;
+    TextView instructions;
 
     Game game;
 
@@ -24,24 +24,31 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
         rock = findViewById(R.id.buttonRockID);
         scissors = findViewById(R.id.buttonScissorsID);
         paper = findViewById(R.id.buttonPaperID);
-        display = findViewById(R.id.textDisplay);
+        instructions = findViewById(R.id.textDisplay);
         game = new Game();
-        score = findViewById(R.id.scoreID);
+
 
 //        setButtonColors();
     }
 
     public void getPlayerHand(View view){
+
         Button button = (Button) view;
         game.setPlayer(button.getText().toString());
         game.randomComputerHand();
-        displayWinnerText();
+
+        String displayWinnerText = displayWinnerText();
+
+        Intent intent = new Intent(this, AnswerActivity.class);
+        intent.putExtra("displayWinnerText", displayWinnerText);
+        startActivity(intent);
 
     }
 
-    public void displayWinnerText(){
-        display.setText(game.handsPlayedText());
-        score.setText(game.displayScore());
+    public String displayWinnerText(){
+       instructions.setText(game.handsPlayedText());
+       return instructions.getText().toString();
+       // score.setText(game.displayScore());
 
     }
 
