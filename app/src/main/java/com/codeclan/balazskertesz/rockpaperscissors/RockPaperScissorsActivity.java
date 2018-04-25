@@ -15,6 +15,7 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
     Button paper;
 
     TextView instructions;
+    TextView score;
 
     Game game;
 
@@ -26,7 +27,9 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
         scissors = findViewById(R.id.buttonScissorsID);
         paper = findViewById(R.id.buttonPaperID);
         instructions = findViewById(R.id.textDisplay);
+        score = findViewById(R.id.scoreID);
         game = new Game();
+
         Log.d(getClass().toString(), "In the Game onCreate");
 
 
@@ -39,6 +42,7 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
         game.setPlayer(button.getText().toString());
         game.randomComputerHand();
 
+
         String displayWinnerText = displayWinnerText();
         String displayScore = displayScore();
 
@@ -46,6 +50,7 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
         intent.putExtra("displayWinnerText", displayWinnerText);
         intent.putExtra("displayScore", displayScore);
         startActivity(intent);
+        displayScoreFrontPage();
 
     }
 
@@ -55,6 +60,10 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
 
     public String displayScore(){
         return game.displayScore();
+    }
+
+    public void displayScoreFrontPage(){
+        score.setText(game.displayScore());
     }
 
     public void setButtonColors(){
